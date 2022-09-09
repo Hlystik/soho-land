@@ -1,0 +1,28 @@
+.action {
+  padding: 80px 0 72px;
+  &__box {
+    background: url(../images/bg_prom.jpg)center (center/cover) no-repeat;
+    border-radius: 16px;
+    padding: 22px 30px 30px;
+  }
+
+  &__box-text {
+    font-weight: 500;
+    font-size: 16.9208px;
+    line-height: 167.02%;
+    color: #FFFFFF;
+    margin-top: 22px;
+  }
+  &__promo-code {
+    margin-top: 41px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16.9208px;
+    line-height: 167.02%;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 11px 34px;
+    background: #83B58C;
+    border-radius: 5px;
+  }
+}

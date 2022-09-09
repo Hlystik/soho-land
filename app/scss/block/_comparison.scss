@@ -1,0 +1,100 @@
+.comparison {
+  background: #E5E5E5;
+  padding: 40px 0 73px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 73px;
+  }
+  &__img_mouse {
+    display: none;
+  }
+  &__wrap {
+
+    height: 940px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  &__wrap::-webkit-scrollbar {
+    display: none;
+  }
+  &__grid {
+    max-width: 774px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 17px;
+    /* margin-bottom: 70px; */
+  }
+  &__grid + &__grid {
+    margin-top: 70px;
+  }
+  &__item {
+    background-color: #83B58C;
+    background: #FFFFFF;
+    box-shadow: 38px 34px 30.5px rgba(32, 35, 44, 0.01), 16.6535px 14.8031px 23.1298px rgba(32, 35, 44, 0.02), 4.62596px 3.70077px 12.0275px rgba(32, 35, 44, 0.02), 0px 0px 0px rgba(32, 35, 44, 0.02);
+    backdrop-filter: blur(11px);
+    border-radius: 6.5px;
+    padding: 21px 10px 21px 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:first-child {
+      justify-content: start;
+    }
+    &:nth-child(2) {
+      justify-content: start;
+    }
+    &:nth-child(even) {
+      background: #FAFAFA;
+    }
+  }
+  .content--start {
+    justify-content: start;
+  }
+
+  &__item-title {
+    height: 95px;
+    background: #AAD7B3;
+    box-shadow: 37.9329px 34.2321px 30.5314px rgba(32, 35, 44, 0.01), 16.6535px 14.8031px 23.1298px rgba(32, 35, 44, 0.02), 4.62596px 3.70077px 12.0275px rgba(32, 35, 44, 0.02), 0px 0px 0px rgba(32, 35, 44, 0.02);
+    backdrop-filter: blur(11.1023px);
+    border-radius: 6.47635px;
+    margin: -21px -10px 21px -27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 148.52%;
+    color: #FFFFFF;
+  }
+  &__item-title--grey {
+    background: #C8C8C8;
+  }
+  &__item-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 173%;
+    color: #000000;
+  }
+  &__item-text--grey {
+    color: rgba(0, 0, 0, 0.59);
+  }
+}
+.navmenu {
+  width: 240px;
+  &__list-item {
+    margin-top: 20px;
+  }
+  &__list-link {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 148.52%;
+    color: #000000;
+  }
+  &__list-link--active {
+    color: #83B58C;
+    text-decoration-line: underline;
+  } 
+}
