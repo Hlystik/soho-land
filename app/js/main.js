@@ -1,5 +1,5 @@
 $(function () {
-
+  //скрипт табы
   if ($(window).width() >= '767') {
     $('.tabs__triggers-item').on('click', function (e) {
       e.preventDefault();
@@ -13,6 +13,7 @@ $(function () {
     });
     $('.tabs__triggers-item:first').click();
   }
+  //скрипт аккордион
   if ($(window).width() <= '766') {
     $('.tabs__accordion-item').on('click', function (e) {
       e.preventDefault();
@@ -24,7 +25,7 @@ $(function () {
     });
     $('.tabs__accordion-item').click();
   }
-
+  //затемнение headera
   $(window).on("scroll", function () {
     if ($(this).scrollTop() >= 1) {
       $('.navbar').addClass("darkheader");
@@ -35,6 +36,7 @@ $(function () {
       $('.navbar').removeClass("darkheader");
     }
   });
+  //бургер
   $('.menu__burger').on('click', function () {
     $('.menu__list').toggleClass('menu__list--active');
     $('.menu__close-zone').toggleClass('menu__close-zone--active');
@@ -43,9 +45,30 @@ $(function () {
     $('.menu__list').removeClass('menu__list--active');
     $('.menu__close-zone').removeClass('menu__close-zone--active');
   });
-  // если в href начинается с # или ., то ловим клик
-  /* $('a[href^="#"], a[href^="."]').click(function (e) {
-
+  // скрипт скролл Хеадер     
+  $(".menu__list-link").on("click", function (e) {
+    const anchor = $(this);
+    $('.menu__list-link').removeClass('menu__list-link--active');
+    $(anchor).addClass('menu__list-link--active');
+    $('html, body').stop().animate({
+      scrollTop: $(anchor.attr('href')).offset().top-84
+    }, 777);
+    e.preventDefault();
+    return false;
+  });
+  //Скролл в блоке работает коряво
+/*   $(".navmenu__list-link").on("click", function (e) {
+    const anchor = $(this);
+    $('.navmenu__list-link').removeClass('navmenu__list-link--active');
+    $(anchor).addClass('navmenu__list-link--active');
+    $('.comparison__wrap').stop().animate({
+      scrollTop: $(anchor.attr('href')).offset().top
+    }, 777);
+    e.preventDefault();
+    return false;
+  }); */
+  // работает получше, но также плохо) 
+  $('.navmenu__list-link').click(function (e) {
     // возьмем содержимое атрибута href
     var scroll_el = $(this).attr('href');
     //left = $(scroll_el).offset().left
@@ -56,30 +79,15 @@ $(function () {
         scrollTop: $(scroll_el).offset().top
       }, 100);
     }
-
-    return false; // выключаем стандартное действие
-  }); */
-  /*   jQuery("a.scrollto").click(function () {
-        elementClick = jQuery(this).attr("href")
-        destination = jQuery(elementClick).offset().top;
-        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 3000);
-        return false;
-        });
-       */
- /*  $(".menu__list-link").on("click", function (e) {
-    const anchor = $(this);
-    $('.menu__list-link').removeClass('menu__list-link--active');
-    $(anchor).addClass('menu__list-link--active');
-    $('html, body').stop().animate({
-      scrollTop: $(anchor.attr('href')).offset().top-84
-    }, 777);
     e.preventDefault();
-    return false;
-  }); */
+    return false; // выключаем стандартное действие
+  });
+
+  
   
 });
-
-const getId = (link) => link.getAttribute('href').replace('#', '');
+//скрипт для переключения хедера при скролле
+/* const getId = (link) => link.getAttribute('href').replace('#', '');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -93,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.7,
+  threshold: 0.3,
 });
 
 document.querySelectorAll('.section').forEach(
@@ -112,4 +120,4 @@ document.querySelector('.menu__list').addEventListener('click', (event) => {
       behavior: 'smooth',
     });
   }
-});
+}); */
