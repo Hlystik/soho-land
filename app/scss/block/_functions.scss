@@ -102,6 +102,11 @@
     background-image: url(../images/tab_icon_1.svg);
     background-position: center;
     background-repeat: no-repeat;
+    transition: .5s all;
+    &:hover {
+      background-color:#437e54;
+      
+    }
     &::before {
       content: "Коммуникации";
       width: 219px;
@@ -117,6 +122,11 @@
   }
   &__triggers-item--active {
     background-color: rgba(131, 181, 140, 0.78);
+    transition: .5s all;
+    &:hover {
+      background-color: rgba(131, 181, 140, 0.78);
+      
+    }
     &::before {
       color: #000000;
     }
@@ -166,3 +176,30 @@
   content: "\f078";
   border: none;
 }
+.icon-Group-47 {
+  position: relative;
+  cursor: pointer;
+}
+.tool-tip_text {
+  position: absolute;
+  width: 161px;
+  min-height: 58px;
+  background: #FFFFFF;
+  border: 0.5px solid #83B58C;
+  border-radius: 10px;
+  padding: 10px 6px;
+  text-align: center;
+  top: -110px;
+  left: 17px;
+  font-size: 10px;
+  line-height: 148.52%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s all;
+  z-index: 3;
+}
+
+.icon-Group-47:hover .tool-tip_text {
+  opacity: 1;
+  visibility: visible;
+} 

@@ -1,5 +1,5 @@
 $(function () {
-  //скрипт табы
+  //script tabs
   if ($(window).width() >= '767') {
     $('.tabs__triggers-item').on('click', function (e) {
       e.preventDefault();
@@ -12,8 +12,19 @@ $(function () {
       e.preventDefault();
     });
     $('.tabs__triggers-item:first').click();
+    //скролл рабочий
+    $(".navmenu__list-link").on("click", function (e) {
+      const anchor = $(this);
+      const scroll_el = $(this).attr('href');
+      $('.navmenu__list-link').removeClass('navmenu__list-link--active');
+      $(anchor).addClass('navmenu__list-link--active');
+      $('.comparison__wrap').animate({ scrollTop: $('.comparison__wrap').scrollTop() + ($(scroll_el).offset().top - $('.comparison__wrap').offset().top) });
+      e.preventDefault();
+      return false;
+    });
+    $('.navmenu__list-link:first').click();
   }
-  //скрипт аккордион
+  //script accordion
   if ($(window).width() <= '766') {
     $('.tabs__accordion-item').on('click', function (e) {
       e.preventDefault();
@@ -24,8 +35,21 @@ $(function () {
       e.preventDefault();
     });
     $('.tabs__accordion-item').click();
+     //скролл рабочий
+    $(".navmenu__list-link").on("click", function (e) {
+      const anchor = $(this);
+      const scroll_el = $(this).attr('href');
+      $('.navmenu__list-link').removeClass('navmenu__list-link--active');
+      $(anchor).addClass('navmenu__list-link--active');
+      $('.comparison__wrap').animate({ 
+        scrollLeft: $('.comparison__wrap').scrollLeft() + ($(scroll_el).offset().left - $('.comparison__wrap').offset().left) 
+      });
+      e.preventDefault();
+      return false;
+    });
+    $('.navmenu__list-link:first').click();
   }
-  //затемнение headera
+  //dark headera
   $(window).on("scroll", function () {
     if ($(this).scrollTop() >= 1) {
       $('.navbar').addClass("darkheader");
@@ -36,7 +60,7 @@ $(function () {
       $('.navbar').removeClass("darkheader");
     }
   });
-  //бургер
+  //burger
   $('.menu__burger').on('click', function () {
     $('.menu__list').toggleClass('menu__list--active');
     $('.menu__close-zone').toggleClass('menu__close-zone--active');
@@ -56,34 +80,6 @@ $(function () {
     e.preventDefault();
     return false;
   });
-  //Скролл в блоке работает коряво
-/*   $(".navmenu__list-link").on("click", function (e) {
-    const anchor = $(this);
-    $('.navmenu__list-link').removeClass('navmenu__list-link--active');
-    $(anchor).addClass('navmenu__list-link--active');
-    $('.comparison__wrap').stop().animate({
-      scrollTop: $(anchor.attr('href')).offset().top
-    }, 777);
-    e.preventDefault();
-    return false;
-  }); */
-  // работает получше, но также плохо) 
-  $('.navmenu__list-link').click(function (e) {
-    // возьмем содержимое атрибута href
-    var scroll_el = $(this).attr('href');
-    //left = $(scroll_el).offset().left
-    // проверим существование элемента чтобы избежать ошибки
-    if ($(scroll_el).length != 0) {
-      // анимируем скроолинг к элементу scroll_el
-      $('.comparison__wrap').animate({
-        scrollTop: $(scroll_el).offset().top
-      }, 100);
-    }
-    e.preventDefault();
-    return false; // выключаем стандартное действие
-  });
-
-  
   
 });
 //скрипт для переключения хедера при скролле

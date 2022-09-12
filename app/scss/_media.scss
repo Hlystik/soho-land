@@ -99,6 +99,7 @@
     &__promo-descr {
       text-align: center;
       margin-right: 0;
+      margin-top: 100px;
     }
     &__promo-code {
       margin-top: 10px;
@@ -215,6 +216,13 @@
     }
     &__content-title {
       margin-top: 28px;
+    }
+    .tool-tip_text {
+      width: 100px;
+      font-size: 6px;
+      top: -90px;
+      right: 17px;
+      left: auto;
     }
   }
   .moving {
