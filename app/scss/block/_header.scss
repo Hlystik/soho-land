@@ -158,13 +158,13 @@
     border-radius: 8.32258px;
     width: 258px;
     height: 159.05px;
-    opacity: .6;
+    //opacity: .6;
   }
   &__item-img2 {
     width: 231px;
     height: 142.41px;
     border-radius: 7.45161px;
-    opacity: .6;
+    //opacity: .6;
   }
   &__item-img3 {
     width: 279px;
@@ -172,8 +172,19 @@
     border-radius: 9px;
     //opacity: .6;
   }
-  &__item-link {
+  &__item-play {
     position: absolute;
-    padding: 45px 90px;
+    z-index: 1;
+    transition:all .5s;
+  }
+  &__item-link {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   &:hover {
+    .video__item-play {
+      transform: scale(1.2);
+    }
+   }
   }
 }
